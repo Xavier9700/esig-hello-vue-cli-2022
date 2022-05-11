@@ -1,9 +1,11 @@
 <template>
   <div id="app">
     <nav>
+      <!--Liens vers le fichier index.js-->
       <router-link to="/">Home</router-link> |
       <router-link to="/produits">Produits</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link> |
+      <router-link to="/NousContacter">Contact</router-link>
     </nav>
     <div id="contenu">
       <router-view />
