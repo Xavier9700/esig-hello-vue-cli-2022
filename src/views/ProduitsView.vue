@@ -4,10 +4,19 @@
     <ul>
       <li>{{ nom }}</li>
       <li>{{ prenom }}</li>
+      <li>{{ mot }}</li>
     </ul>
-    <BoutonMagique couleur="red">Bonjour</BoutonMagique>
-    <BoutonMagique>Adieu</BoutonMagique>
-    <BoutonMagique couleur="blue">Tcho</BoutonMagique>
+    <!--    Code qui, quand on click sur le bouton, renvoi vers @click et écrir un msg au mot-->
+    <BoutonMagique @coucou="mot = 'Bienvenue'" couleur="red"
+      >Bonjour</BoutonMagique
+    >
+    <BoutonMagique @coucou="mot = 'Au-revoir'">Adieu</BoutonMagique>
+    <BoutonMagique @coucou="mot = 'Ciao fréfo'" couleur="blue" couleur-txt="red"
+      >Tcho</BoutonMagique
+    >
+    <BoutonMagique @coucou="MotAurevoir" couleur="purple" couleur-txt="black"
+      >Adieu</BoutonMagique
+    >
   </div>
 </template>
 
@@ -20,9 +29,16 @@ export default {
   components: { BoutonMagique },
   data() {
     return {
-      nom: "Fallet",
-      prenom: "Steve",
+      nom: "Willemin",
+      prenom: "Xavier",
+      mot: "Bonjour",
     };
+  },
+  // Création d'une méthode MotAurevoir qui affiche une pop-up quand elle est appelée'
+  methods: {
+    MotAurevoir() {
+      alert("Ce fut un plaisir " + this.prenom + " !");
+    },
   },
 };
 </script>
